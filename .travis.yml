@@ -23,3 +23,5 @@ script:
 
 after_script:
   - docker build -t adarshr/hello-world .
+
+install: true
