@@ -1,0 +1,22 @@
+language: java
+services:
+  - docker
+
+sudo: required
+
+jdk:
+  - openjdk8
+
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+script:
+  ./gradlew clean assemble
+
+after_script:
+  docker build -t adarshr/hello-world .
