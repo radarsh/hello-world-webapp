@@ -16,8 +16,8 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-  chmod +x gradlew
-  ./gradlew clean assemble
+  - chmod +x gradlew
+  - ./gradlew clean assemble
 
 after_script:
   docker build -t adarshr/hello-world .
