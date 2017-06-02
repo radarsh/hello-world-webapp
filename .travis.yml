@@ -24,6 +24,6 @@ script:
 after_script:
   - docker build -t adarshr/hello-world .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push adarshr/hello/world
+  - docker push adarshr/hello-world
 
 install: true
